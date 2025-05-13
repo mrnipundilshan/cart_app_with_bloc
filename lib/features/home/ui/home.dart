@@ -15,9 +15,29 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return BlocConsumer<HomeBloc, HomeState>(
       bloc: homeBloc,
+      //listenWhen: (previous, current) {},
+      //buildWhen: (previous, current) {},
       listener: (context, state) {},
       builder: (context, state) {
-        return Scaffold(appBar: AppBar(title: Text("Grocery app")));
+        return Scaffold(
+          appBar: AppBar(
+            title: Text("Grocery app"),
+            actions: [
+              IconButton(
+                onPressed: () {
+                  homeBloc.add(HomeWishListButtonNavgateEvent());
+                },
+                icon: Icon(Icons.favorite_border),
+              ),
+              IconButton(
+                onPressed: () {
+                  homeBloc.add(HomeProductCartButtonClicked());
+                },
+                icon: Icon(Icons.shopping_bag_outlined),
+              ),
+            ],
+          ),
+        );
       },
     );
   }
