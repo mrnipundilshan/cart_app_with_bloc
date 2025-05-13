@@ -1,4 +1,4 @@
-import 'package:cart_app_with_bloc/features/home/home.dart';
+import 'package:cart_app_with_bloc/features/home/ui/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
