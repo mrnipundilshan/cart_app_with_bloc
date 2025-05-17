@@ -1,4 +1,4 @@
-import 'package:cart_app_with_bloc/features/cart/card.dart';
+import 'package:cart_app_with_bloc/features/cart/ui/card.dart';
 import 'package:cart_app_with_bloc/features/home/bloc/home_bloc.dart';
 import 'package:cart_app_with_bloc/features/home/ui/Product_tile_widget.dart';
 import 'package:cart_app_with_bloc/features/wishlist/wishlist.dart';
