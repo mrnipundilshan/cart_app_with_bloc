@@ -7,6 +7,26 @@ class ProductTileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
+      child: Column(
+        children: [
+          Container(
+            height: 200,
+            width: double.maxFinite,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.fitHeight,
+                image: AssetImage(productDataModel.imageUrl),
+              ),
+            ),
+          ),
+
+          Text(productDataModel.name),
+          Text(productDataModel.description),
+        ],
+      ),
+    );
   }
 }
