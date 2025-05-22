@@ -49,10 +49,10 @@ class _HomeState extends State<Home> {
       },
       builder: (context, state) {
         switch (state.runtimeType) {
-          case HomeLoadingState:
+          case const (HomeLoadingState):
             return Scaffold(body: Center(child: CircularProgressIndicator()));
 
-          case HomeLoadedSuccessState:
+          case const (HomeLoadedSuccessState):
             final successState = state as HomeLoadedSuccessState;
             return Scaffold(
               appBar: AppBar(
@@ -84,7 +84,7 @@ class _HomeState extends State<Home> {
               ),
             );
 
-          case HomeErrorState:
+          case const (HomeErrorState):
             return Scaffold(body: Center(child: Text('Error')));
           default:
             return SizedBox();

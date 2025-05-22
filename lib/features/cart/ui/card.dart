@@ -1,6 +1,5 @@
 import 'package:cart_app_with_bloc/features/cart/bloc/cart_bloc.dart';
 import 'package:cart_app_with_bloc/features/cart/ui/cart_tile_widget.dart';
-import 'package:cart_app_with_bloc/features/home/ui/Product_tile_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -15,6 +14,7 @@ class _CartState extends State<Cart> {
   final CartBloc cartBloc = CartBloc();
   @override
   void initState() {
+    super.initState();
     cartBloc.add(CartInitialEvent());
   }
 
@@ -29,7 +29,7 @@ class _CartState extends State<Cart> {
         buildWhen: (previous, current) => current is! CartActionState,
         builder: (context, state) {
           switch (state.runtimeType) {
-            case CartSuccessState:
+            case const (CartSuccessState):
               final successState = state as CartSuccessState;
               return ListView.builder(
                 itemCount: successState.cartItems.length,
