@@ -51,7 +51,7 @@ class WishlistTileWidget extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.favorite_border),
+                    icon: Icon(Icons.favorite_rounded),
                   ),
                   IconButton(
                     onPressed: () {

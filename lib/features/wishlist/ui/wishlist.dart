@@ -25,17 +25,22 @@ class _WishlistState extends State<Wishlist> {
       body: BlocConsumer<WishlistBloc, WishlistState>(
         bloc: wishlistBloc,
         listener: (context, state) {},
-        listenWhen: (previous, current) => current is WishlistState,
-        buildWhen: (previous, current) => current is! WishlistState,
+        listenWhen: (previous, current) => current is WishlistActionState,
+        buildWhen: (previous, current) => current is! WishlistActionState,
         builder: (context, state) {
           switch (state.runtimeType) {
             case const (WishSuccessState):
               final successState = state as WishSuccessState;
-              return ListView.builder(itemBuilder: (context, Index) {
-                return WishlistTileWidget(
-                  
-                  productDataModel: successState.wishlistItems[Index]),
-              });
+              return ListView.builder(
+                itemCount: successState.wishlistItems.length,
+                itemBuilder: (context, index) {
+                  return WishlistTileWidget(
+                    wishlistBloc: WishlistBloc(),
+                    productDataModel: successState.wishlistItems[index],
+                  );
+                },
+              );
+            default:
           }
           return Container();
         },
