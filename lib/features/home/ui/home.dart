@@ -1,7 +1,7 @@
-import 'package:cart_app_with_bloc/features/cart/ui/card.dart';
+import 'package:cart_app_with_bloc/features/cart/ui/cart.dart';
 import 'package:cart_app_with_bloc/features/home/bloc/home_bloc.dart';
 import 'package:cart_app_with_bloc/features/home/ui/Product_tile_widget.dart';
-import 'package:cart_app_with_bloc/features/wishlist/wishlist.dart';
+import 'package:cart_app_with_bloc/features/wishlist/ui/wishlist.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
